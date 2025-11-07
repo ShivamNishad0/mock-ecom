@@ -1,9 +1,9 @@
 const express = require('express');
-const { Cart } = require('../db');
+const db = require('../db');
 const router = express.Router();
 
 // POST /api/checkout - Mock checkout
-router.post('/', async (req, res) => {
+router.post('/', (req, res) => {
   const { cartItems } = req.body;
   if (!cartItems || !Array.isArray(cartItems)) {
     return res.status(400).json({ error: 'cartItems array is required' });
@@ -23,11 +23,11 @@ router.post('/', async (req, res) => {
   };
 
   // Clear cart after checkout (optional)
-  try {
-    await Cart.deleteMany({});
-  } catch (err) {
-    console.error('Error clearing cart:', err.message);
-  }
+  db.run("DELETE FROM cart", [], (err) => {
+    if (err) {
+      console.error('Error clearing cart:', err.message);
+    }
+  });
 
   res.json(receipt);
 });
