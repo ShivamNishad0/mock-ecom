@@ -16,6 +16,11 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Health check endpoint
+app.get('/', (req, res) => {
+  res.send('Mock E-commerce API is running');
+});
+
 // server.js (or routes file)
 app.post('/api/process-payment', (req, res) => {
   const { orderId, amount, card } = req.body;
