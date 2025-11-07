@@ -3,7 +3,7 @@ const API_BASE_URL = 'https://mock-ecom-back.onrender.com/api';
 
 export const api = {
   //  Fetch all products
-  getProducts: async (page = 1, limit = 10) => {
+  getProducts: async (page = 1, limit = 14) => {
     const response = await fetch(`${API_BASE_URL}/products?page=${page}&limit=${limit}`);
     if (!response.ok) {
       throw new Error('Failed to fetch products');
