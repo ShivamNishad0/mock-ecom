@@ -7,7 +7,7 @@ const ProductGrid = ({ addToCart }) => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const LIMIT = 12;
+  const LIMIT = 14;
 
   const fetchProducts = async (currentPage) => {
     setLoading(true);

@@ -140,16 +140,16 @@ Mock products are automatically inserted on first run.
 ## Screenshots
 
 ### Product Grid
-![Product Grid](https://via.placeholder.com/800x400?text=Product+Grid+Screenshot)
+![Product Grid](./Product.png)
 
 ### Cart View
-![Cart View](https://via.placeholder.com/800x400?text=Cart+View+Screenshot)
+![Cart View](./Cart.png)
 
 ### Checkout Form
-![Checkout Form](https://via.placeholder.com/800x400?text=Checkout+Form+Screenshot)
+![Checkout Form](./Checkout.png)
 
 ### Receipt
-![Receipt](https://via.placeholder.com/800x400?text=Receipt+Screenshot)
+![Receipt](./Recipt.png)
 
 ## Demo Video
 
