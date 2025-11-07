@@ -1,4 +1,5 @@
 backend/cart.db
 TODO.md
 frontend/build/
-frontend/.env 
+frontend/.env
+backend/.env
