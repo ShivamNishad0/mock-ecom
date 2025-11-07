@@ -41,6 +41,7 @@ const ProductGrid = ({ addToCart }) => {
   const buttonStyle = {
     backgroundColor: 'black',
     color: '#fff',
+    marginTop: '-4px',
     border: '2px solid yellow',
     padding: '10px',
     borderRadius: '5px',
