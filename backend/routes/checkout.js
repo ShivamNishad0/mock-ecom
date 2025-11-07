@@ -20,13 +20,16 @@ router.post('/', async (req, res) => {
       productMap[product._id.toString()] = product;
     });
 
+    // Validate all products exist
+    const missingProducts = cartItems.filter(item => !productMap[item.id]);
+    if (missingProducts.length > 0) {
+      return res.status(400).json({ error: `Products not found: ${missingProducts.map(item => item.id).join(', ')}` });
+    }
+
     // Calculate total
     let total = 0;
     const itemsWithPrices = cartItems.map(item => {
       const product = productMap[item.id];
-      if (!product) {
-        throw new Error(`Product with id ${item.id} not found`);
-      }
       const itemTotal = product.price * item.quantity;
       total += itemTotal;
       return {

@@ -64,6 +64,7 @@ router.get('/', verifyToken, async (req, res) => {
     const cartItems = await Cart.find({ user_id: req.user.id }).populate('product_id', 'name price');
     const items = cartItems.map(item => ({
       id: item._id,
+      productId: item.product_id._id,
       quantity: item.quantity,
       name: item.product_id.name,
       price: item.product_id.price

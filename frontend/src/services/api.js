@@ -1,5 +1,5 @@
-// const API_BASE_URL = 'http://localhost:3001/api';
-const API_BASE_URL = 'https://mock-ecom-back.onrender.com/api';
+const API_BASE_URL = 'http://localhost:3001/api';
+// const API_BASE_URL = 'https://mock-ecom-back.onrender.com/api';
 
 export const api = {
   //  Fetch all products
@@ -86,7 +86,7 @@ export const api = {
   checkout: async (cartItems) => {
     const payload = {
       cartItems: cartItems.map((item) => ({
-        id: item.id,
+        id: item.productId || item.id,
         quantity: item.quantity || 1,
       })),
     };

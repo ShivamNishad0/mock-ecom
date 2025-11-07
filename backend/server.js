@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: 'https://mock-ecom-front.onrender.com' || 'http://localhost:3000',
+  origin: 'http://localhost:3000',
   credentials: true,  
 }));
 app.use(bodyParser.json());
