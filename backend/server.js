@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
-  origin: 'https://mock-ecom-front.onrender.com'
+  origin: 'https://mock-ecom-front.onrender.com' || 'http://localhost:3000',
+  credentials: true,  
 }));
 app.use(bodyParser.json());
 
@@ -66,8 +67,8 @@ app.use('/api/checkout', checkoutRoutes);
 app.use('/api/auth', authRoutes);
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT} on 0.0.0.0`);
 });
 
 module.exports = app;

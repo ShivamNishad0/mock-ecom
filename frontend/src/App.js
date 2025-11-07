@@ -5,7 +5,7 @@ import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { api } from './services/api';
+import { api, checkConnectivity } from './services/api';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -15,6 +15,8 @@ function App() {
 
   // --- Authentication check ---
   useEffect(() => {
+    checkConnectivity();
+
     const token = localStorage.getItem('token');
     const storedUser = localStorage.getItem('user');
 
