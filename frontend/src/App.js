@@ -15,8 +15,6 @@ function App() {
 
   // --- Authentication check ---
   useEffect(() => {
-    checkConnectivity();
-
     const token = localStorage.getItem('token');
     const storedUser = localStorage.getItem('user');
 

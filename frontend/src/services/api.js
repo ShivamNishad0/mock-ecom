@@ -1,15 +1,6 @@
 // const API_BASE_URL = 'http://localhost:3001/api';
 const API_BASE_URL = 'https://mock-ecom-back.onrender.com/api';
 
-// Check backend connectivity
-export const checkConnectivity = async () => {
-  try {
-    await fetch('http://localhost:3001');
-  } catch {
-    console.warn('No open HTTP ports detected on 0.0.0.0, continuing to scan...');
-  }
-};
-
 export const api = {
   //  Fetch all products
   getProducts: async (page = 1, limit = 10) => {
